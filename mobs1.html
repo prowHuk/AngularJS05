@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="SampleApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jumbular</title>
+
+    <!-- Bootstrap -->
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+ <script>
+   var app = angular.module("SampleApp",[]);
+  
+  app.controller("SampleAppCtrl", function ($scope){
+  $scope.items = [{ name: "Item 1", value: "Value 1"},
+  { name: "Item 2", value: "Value 2"},
+  { name: "Item 3", value: "Value 3"}];
+  });
+</script>
+  </head>
+ <body>
+  <div ng-controller="SampleAppCtrl">
+  <div>There are {{items.length}} items</div>
+  <div>
+  	There are <span ng-bind="items.length"></span> items
+  </div>
+  <div ng-bind-template="First item: {{items[0].name}}. Second item: {{items[1].name}}"></div>
+  <div ng-non-bindable>
+  AngularJS uses {{and}} characters for templates
+  </div>
+  </div>
+  
+     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+     
+		<script src="js/bootstrap.js"></script>
+  </body>
+</html>
